@@ -4,8 +4,11 @@ import notification from "../img/Notification.svg";
 import user from "../img/User.svg";
 import logout from "../img/Logout.svg";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../Features/UserSlice";
 
 const Navigation = () => {
+  const dispatch = useDispatch();
   return (
     <div className="bg-turquoise h-[90px] flex items-center px-6   justify-between">
       <h1 className="font-bold text-5xl text-white max-[720px]:text-3xl">
@@ -18,9 +21,13 @@ const Navigation = () => {
         <Link to={"/profile"}>
           <img className="cursor-pointer" src={user} alt="" />
         </Link>
-        <Link to={"/login"}>
-          <img className="cursor-pointer" src={logout} alt="" />
-        </Link>
+
+        <img
+          className="cursor-pointer"
+          src={logout}
+          alt=""
+          onClick={() => dispatch(logoutUser())}
+        />
       </div>
     </div>
   );
