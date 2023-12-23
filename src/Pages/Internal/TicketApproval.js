@@ -1,21 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import search from "../../img/Search.svg";
-import starGray from "../../img/StarDark.svg";
-import starGolden from "../../img/StarGolden.svg";
-import ViewTicket from "../../Components/ViewTicket";
+import dropbox from "../../img/DropBox.svg";
+import tick from "../../img/Tick.svg";
+import cross from "../../img/Cross.svg";
 
-const MyTicket = () => {
-  const [isViwing, setViwing] = useState(false);
-  const handleViwing = () => {
-    setViwing((state) => !state);
-  };
-
+const TicketApproval = () => {
   return (
     <div className="flex flex-col items-center pt-[3.5vw] px-2 sanchez  bg-white pb-20">
-      {/* popups */}
-      {isViwing && <ViewTicket handleViwing={handleViwing} />}
-      <h1 className=" text-4xl ">List Of Ticket</h1>
-      <div className="mt-[7.571vh] w-[68.333vw]  flex flex-col">
+      <h1 className=" text-4xl w-[68.333vw]">Ticket Approval</h1>
+      <div className="mt-[2.571vh] w-[68.333vw]  flex flex-col">
         {/* Sarch bar */}
         <div
           className="w-[21.389vw] bg-[#C4C4C4A1]  h-[53px] flex items-center pr-[12px] rounded-[10px] text-3xl"
@@ -43,15 +36,14 @@ const MyTicket = () => {
           <div className="items-center flex mb-[15px] w-full justify-between px-2">
             <span className="w-[120px] text-2xl text-center">Ticket No.</span>
             <span className="w-[120px] text-2xl text-center">Subject</span>
-            <span className="w-[120px] text-2xl text-center">Status</span>
-            <span className="w-[130px] text-2xl text-center">Support by</span>
+            <span className="w-[120px] text-2xl text-center">Catagory</span>
+            <span className="w-[120px] text-2xl text-center">Priority</span>
             <span className="w-[120px] text-2xl text-center">Date</span>
-            <span className="w-[135px] text-2xl text-center">Rate</span>
+            <span className="w-[70px] text-2xl text-center">Action</span>
+            <span className="w-[125px] text-2xl text-center">Assign to</span>
           </div>
 
-          <div
-            className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#C4C4C45E] cursor-pointer"
-            onClick={handleViwing}>
+          <div className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#C4C4C45E]">
             <span className="w-[120px] text-2xl text-center text-trueBlue underline">
               1234
             </span>
@@ -60,33 +52,34 @@ const MyTicket = () => {
               style={{ lineHeight: "18px" }}>
               Login issue
             </span>
+
             <span
-              className="w-[120px] text-[24px] text-center bg-[#5CDB95] rounded-md flex items-center justify-center h-[42px] "
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              In Progress
+              Access issue
             </span>
             <span
-              className="w-[130px] text-2xl text-center"
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              Tech Support
+              High
             </span>
             <span
               className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
               13/08/21
             </span>
-            <span className="w-[135px] flex gap-[4.5px]">
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
+            <span className="w-[70px] flex items-center justify-between">
+              <img src={tick} alt="" />
+              <img src={cross} alt="" />
+            </span>
+            <span className="w-[125px] flex gap-[4.5px] px-[2px] py-2">
+              <span className="h-[46px] w-full bg-[#C4C4C4] flex items-center justify-end px-1">
+                <img src={dropbox} alt="" />
+              </span>
             </span>
           </div>
 
-          <div
-            className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#0000002e] cursor-pointer"
-            onClick={handleViwing}>
+          <div className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#0000002e]">
             <span className="w-[120px] text-2xl text-center text-trueBlue underline">
               1234
             </span>
@@ -95,33 +88,34 @@ const MyTicket = () => {
               style={{ lineHeight: "18px" }}>
               Login issue
             </span>
+
             <span
-              className="w-[120px] text-[24px] text-center bg-[#05386B] text-white rounded-md flex items-center justify-center h-[42px] "
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              On Hold
+              Access issue
             </span>
             <span
-              className="w-[130px] text-2xl text-center"
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              Tech Support
+              Medium
             </span>
             <span
               className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
               13/08/21
             </span>
-            <span className="w-[135px] flex gap-[4.5px]">
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
+            <span className="w-[70px] flex items-center justify-between">
+              <img src={tick} alt="" />
+              <img src={cross} alt="" />
+            </span>
+            <span className="w-[125px] flex gap-[4.5px] px-[2px] py-2">
+              <span className="h-[46px] w-full bg-[#C4C4C4] flex items-center justify-end px-1">
+                <img src={dropbox} alt="" />
+              </span>
             </span>
           </div>
 
-          <div
-            className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#C4C4C45E] cursor-pointer"
-            onClick={handleViwing}>
+          <div className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#C4C4C45E]">
             <span className="w-[120px] text-2xl text-center text-trueBlue underline">
               1234
             </span>
@@ -130,33 +124,34 @@ const MyTicket = () => {
               style={{ lineHeight: "18px" }}>
               Login issue
             </span>
+
             <span
-              className="w-[120px] text-[24px] text-center bg-[#212025] rounded-md flex items-center justify-center h-[42px]  text-white"
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              Closed
+              Access issue
             </span>
             <span
-              className="w-[130px] text-2xl text-center"
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              Tech Support
+              Low
             </span>
             <span
               className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
               13/08/21
             </span>
-            <span className="w-[135px] flex gap-[4.5px]">
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
+            <span className="w-[70px] flex items-center justify-between">
+              <img src={tick} alt="" />
+              <img src={cross} alt="" />
+            </span>
+            <span className="w-[125px] flex gap-[4.5px] px-[2px] py-2">
+              <span className="h-[46px] w-full bg-[#C4C4C4] flex items-center justify-end px-1">
+                <img src={dropbox} alt="" />
+              </span>
             </span>
           </div>
 
-          <div
-            className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#0000002e] cursor-pointer"
-            onClick={handleViwing}>
+          <div className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#0000002e]">
             <span className="w-[120px] text-2xl text-center text-trueBlue underline">
               1234
             </span>
@@ -165,33 +160,33 @@ const MyTicket = () => {
               style={{ lineHeight: "18px" }}>
               Login issue
             </span>
+
             <span
-              className="w-[120px] text-[24px] text-center bg-[#05386B] text-white rounded-md flex items-center justify-center h-[42px] "
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              On Hold
+              Access issue
             </span>
             <span
-              className="w-[130px] text-2xl text-center"
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              Tech Support
+              Medium
             </span>
             <span
               className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
               13/08/21
             </span>
-            <span className="w-[135px] flex gap-[4.5px]">
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
-              <img src={starGray} alt="" />
+            <span className="w-[70px] flex items-center justify-between">
+              <img src={tick} alt="" />
+              <img src={cross} alt="" />
+            </span>
+            <span className="w-[125px] flex gap-[4.5px] px-[2px] py-2">
+              <span className="h-[46px] w-full bg-[#C4C4C4] flex items-center justify-end px-1">
+                <img src={dropbox} alt="" />
+              </span>
             </span>
           </div>
-
-          <div
-            className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#C4C4C45E] cursor-pointer"
-            onClick={handleViwing}>
+          <div className="items-center flex  w-full justify-between px-2 py-[8px] bg-[#C4C4C45E]">
             <span className="w-[120px] text-2xl text-center text-trueBlue underline">
               1234
             </span>
@@ -200,30 +195,34 @@ const MyTicket = () => {
               style={{ lineHeight: "18px" }}>
               Login issue
             </span>
+
             <span
-              className="w-[120px] text-[24px] text-center bg-[#212025] rounded-md flex items-center justify-center h-[42px]  text-white"
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              Closed
+              Access issue
             </span>
             <span
-              className="w-[130px] text-2xl text-center"
+              className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
-              Tech Support
+              Low
             </span>
             <span
               className="w-[120px] text-2xl text-center"
               style={{ lineHeight: "18px" }}>
               13/08/21
             </span>
-            <span className="w-[135px] flex gap-[4.5px]">
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
-              <img src={starGolden} alt="" />
+            <span className="w-[70px] flex items-center justify-between">
+              <img src={tick} alt="" />
+              <img src={cross} alt="" />
+            </span>
+            <span className="w-[125px] flex gap-[4.5px] px-[2px] py-2">
+              <span className="h-[46px] w-full bg-[#C4C4C4] flex items-center justify-end px-1">
+                <img src={dropbox} alt="" />
+              </span>
             </span>
           </div>
 
+          {/* Pagination */}
           <div className="text-2xl flex items-center justify-between">
             <span>Showing 1 to 5 of 5 entries</span>
             <span>{"<< 1 >>"}</span>
@@ -234,4 +233,4 @@ const MyTicket = () => {
   );
 };
 
-export default MyTicket;
+export default TicketApproval;

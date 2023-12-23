@@ -9,6 +9,12 @@ import ForgotenPassword from "./Pages/ForgotenPassword";
 import Error from "./Pages/Error";
 import MyTicket from "./Pages/Internal/MyTicket";
 import NewTicket from "./Pages/Internal/NewTicket";
+import TicketApproval from "./Pages/Internal/TicketApproval";
+import Profile from "./Pages/Internal/Profile";
+import DataBase from "./Pages/Internal/DataBase";
+import Performance from "./Pages/Internal/Performance";
+import UserLogHistory from "./Pages/Internal/UserLogHistory";
+import Settings from "./Pages/Internal/Settings";
 
 function App() {
   return (
@@ -24,11 +30,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/my-tickets" element={<MyTicket />} />
           <Route path="/new-tickets" element={<NewTicket />} />
-          <Route path="/performance" element={<NewTicket />} />
-          <Route path="/database" element={<NewTicket />} />
-          <Route path="/settings" element={<NewTicket />} />
-          <Route path="/ticket-approval" element={<NewTicket />} />
-          <Route path="/user-logs" element={<NewTicket />} />
+          <Route path="/performance" element={<Performance />} />
+          <Route path="/database" element={<DataBase />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/ticket-approval" element={<TicketApproval />} />
+          <Route path="/user-logs" element={<UserLogHistory />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="/login" element={<Login />} />
 

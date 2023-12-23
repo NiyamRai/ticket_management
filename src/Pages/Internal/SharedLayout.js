@@ -1,10 +1,18 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import Navigation from "../../Components/Navigation";
 import SideBar from "../../Components/SideBar";
 import Footer from "../../Components/Footer";
+import { useSelector } from "react-redux";
 
 const SharedLayout = () => {
+  const navigate = useNavigate();
+  const { role } = useSelector((store) => store.user);
+  useEffect(() => {
+    if (role === "") {
+      navigate("/login");
+    }
+  }, [role]);
   return (
     <div className="h-full">
       <Navigation />

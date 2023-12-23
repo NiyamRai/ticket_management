@@ -1,7 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const ForgotenPassword = () => {
+  const navigate = useNavigate();
+  const { role } = useSelector((store) => store.user);
+  useEffect(() => {
+    if (role !== "") {
+      navigate("/");
+    }
+  }, [role]);
   return (
     <div className="w-full  bg-turquoise h-[99.99vh] flex items-center justify-center">
       <div className="w-[70vw] h-[90vh] bg-[#EFEDED80] flex flex-col items-center pt-[21.4vh] ">

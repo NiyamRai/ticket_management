@@ -14,7 +14,10 @@ const Navigation = () => {
       <div className="flex items-center gap-[1.04vw]  w-[13.819vw] min-w-max max-[720px]:hidden">
         <img className="cursor-pointer" src={mode} alt="" />
         <img className="cursor-pointer" src={notification} alt="" />
-        <img className="cursor-pointer" src={user} alt="" />
+
+        <Link to={"/profile"}>
+          <img className="cursor-pointer" src={user} alt="" />
+        </Link>
         <Link to={"/login"}>
           <img className="cursor-pointer" src={logout} alt="" />
         </Link>
