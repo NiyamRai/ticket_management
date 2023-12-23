@@ -8,10 +8,12 @@ const SharedLayout = () => {
   return (
     <div className="h-full">
       <Navigation />
-      <div className="flex h-max  w-full">
+      <div className="flex  h-full   w-full">
         <SideBar />
-        <div className=" w-full h-[91.3vh] relative">
-          <Outlet />
+        <div className=" w-full  ">
+          <div className="min-h-[99vh]">
+            <Outlet />
+          </div>
           <Footer />
         </div>
       </div>
