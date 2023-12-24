@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { loginUser } from "../Features/UserSlice";
+import { getUser } from "../Features/UserSlice";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,6 +9,8 @@ const Login = () => {
   const [isShowindCredentials, setCredentials] = useState(true);
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+
+  const { isLoading } = useSelector((store) => store.user);
   console.log(name);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ const Login = () => {
       alert("Please fill all the details!");
     } else {
       // alert("Please fill all the details!");
-      dispatch(loginUser({ name: name, password: password }));
+      dispatch(getUser({ email: name, password: password }));
     }
   };
   const { role } = useSelector((store) => store.user);
@@ -42,14 +44,16 @@ const Login = () => {
               <span className="font-medium">ID</span>
 
               <span className="font-medium">Password</span>
-              <span>admin</span>
-              <span>ANY..</span>
-              <span>support</span>
-              <span>ANY..</span>
-              <span>operator</span>
-              <span>ANY..</span>
-              <span>user</span>
-              <span>ANY..</span>
+              <span className="text-sm">alice@example.com</span>
+              <span>123456</span>
+
+              <span className="text-sm">support@example.com</span>
+              <span>123456</span>
+              <span className="text-sm">operator@example.com</span>
+              <span>123456</span>
+              <span className="text-sm">admn@example.com</span>
+              <span>123456</span>
+
               <button
                 className="col-span-2 rounded-lg bg-corn font-bold"
                 onClick={() => setCredentials(false)}>
@@ -66,11 +70,11 @@ const Login = () => {
         <h1 className="text-5xl font-bold">Helpdesk System</h1>
 
         <input
-          type="text"
+          type="email"
           className="py-[1.85vh] pl-[1.667vw] w-[41.5vw] text-3xl border-[1px] border-black"
           name=""
           id=""
-          placeholder="Username"
+          placeholder="Enter your email"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -90,7 +94,11 @@ const Login = () => {
 
         <button
           type="submit"
-          className="h-[6.9vh] w-[22.29vw] bg-[#03CC17] text-white text-3xl rounded-lg">
+          className={
+            "h-[6.9vh] w-[22.29vw] bg-[#03CC17] text-white text-3xl rounded-lg " +
+            (isLoading ? " opacity-50 cursor-not-allowed" : " ")
+          }
+          disabled={isLoading}>
           Sign In
         </button>
         <div className="flex w-[60%] items-center justify-between">

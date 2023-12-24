@@ -5,7 +5,7 @@ import user from "../img/User.svg";
 import logout from "../img/Logout.svg";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logoutUser } from "../Features/UserSlice";
+import { logOutUser, logoutUser } from "../Features/UserSlice";
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Navigation = () => {
           className="cursor-pointer"
           src={logout}
           alt=""
-          onClick={() => dispatch(logoutUser())}
+          onClick={() => dispatch(logOutUser())}
         />
       </div>
     </div>
