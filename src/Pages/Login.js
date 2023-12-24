@@ -11,8 +11,7 @@ const Login = () => {
   const dispatch = useDispatch();
   console.log(name);
   const handleSubmit = (e) => {
-    console.log("submitting");
-    // e.preventDefault();
+    e.preventDefault();
     if (name === "" || password === "") {
       alert("Please fill all the details!");
     } else {
